@@ -28,23 +28,24 @@
             @csrf
             <div class="mb-3">
                 <label for="nama_galeri" class="form-label">Judul</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" name="nama_galeri" >
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="nama_galeri" value="{{$galeri->nama_galeri}}" >
             </div>
             <div class="mb-3">
                 <label for="id_buku" class="form-label">Buku</label>
                 <select name="id_buku" class="form-control">
-                    <option value="" selected>Pilih Buku</option>
+                    <!-- <option selected >Pilih Buku</option> -->
                     @foreach ($buku as $data)
-                        <option value="{{$data->id}}">{{$data->judul}}</option>
+                        <option value="{{$data->id}}" selected>{{$data->judul}}</option>
                     @endforeach
                 </select>
             </div>
             <div class="mb-3">
                 <label for="keterangan" class="form-label">Keterangan</label>
-                <textarea name="keterangan" id="" class="form-control" cols="30" rows="10"></textarea>
+                <textarea name="keterangan" id="" class="form-control" cols="30" rows="10" value="">{{$galeri->keterangan}}</textarea>
             </div>
             <div class="mb-3">
-                <label for="foto" class="form-label">Foto</label>
+                <label for="foto" class="form-label">Foto</label><br>
+                <img id="frame" src="{{ asset('thumb/'.$galeri->foto) }}" style="width: 100px; height: 100px;"><br><br>
                 <input type="file" class="form-control" name="foto">
             </div>
             <div class="form-group">

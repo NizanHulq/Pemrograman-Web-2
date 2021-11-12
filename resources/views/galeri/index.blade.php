@@ -28,7 +28,7 @@
                                     <td>{{++$no}}</td>
                                     <td>{{ $data->nama_galeri }}</td>
                                     <td>{{ $data->buku->judul }}</td>
-                                    <td><img src="{{ asset('thumb/'.$data->foto) }}" syle='width: 100px;'></td>
+                                    <td><img src="{{ asset('thumb/'.$data->foto) }}" style="width: 100px;"></td>
                                     <td>
                                         <form action="{{ route('galeri.destroy', $data->id) }}" method="post">
                                             @csrf

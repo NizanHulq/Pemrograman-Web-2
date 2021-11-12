@@ -33,7 +33,7 @@
             <div class="mb-3">
                 <label for="id_buku" class="form-label">Buku</label>
                 <select name="id_buku" class="form-control">
-                    <option value="" selected>Pilih Buku</option>
+                    <!-- <option value="" selected>Pilih Buku</option> -->
                     @foreach ($buku as $data)
                         <option value="{{$data->id}}">{{$data->judul}}</option>
                     @endforeach
@@ -44,8 +44,9 @@
                 <textarea name="keterangan" id="" class="form-control" cols="30" rows="10"></textarea>
             </div>
             <div class="mb-3">
-                <label for="foto" class="form-label">Foto</label>
-                <input type="file" class="form-control" name="foto">
+                <label for="foto" class="form-label">Foto</label><br>
+                <img id="frame" alt="" style="width: 100px; height: 100px;"><br><br>
+                <input onchange="loadFile(event)" id="imgInp" accept="image/*" type="file" class="form-control" name="foto" >
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-success">Simpan</button>
@@ -53,6 +54,15 @@
             </div>
         </form>
     </div>
+    <script>
+        var loadFile = function(event) {
+          var output = document.getElementById('frame');
+            frame.src = URL.createObjectURL(event.target.files[0]);
+            frame.onload = function() {
+            URL.revokeObjectURL(frame.src) // free memory
+          }
+        };
+    </script>
 </body>
 </html>
 

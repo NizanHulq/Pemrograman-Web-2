@@ -17,7 +17,7 @@ class GaleriController extends Controller
     }
     public function index(){
         $batas = 4;
-        $galeri = Galeri::orderBy('id','desc')->paginate($batas); 
+        $galeri = Galeri::orderBy('id','asc')->paginate($batas); 
         $no = $batas * ($galeri->currentPage() - 1);
 
         return view('galeri.index', compact('galeri', 'no')); 
@@ -25,7 +25,8 @@ class GaleriController extends Controller
 
     public function create(){
         $buku = Buku::all();
-        return view('galeri.create' , compact('buku'));
+        $galeri = Galeri::all();
+        return view('galeri.create' , compact('buku','galeri'));
     }
 
     public function store(Request $request){

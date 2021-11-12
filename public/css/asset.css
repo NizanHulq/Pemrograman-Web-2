@@ -68,15 +68,16 @@ html, body {
     margin-top: 7rem;
 }
 
-.links > a {
+.links {
     color: #636b6f;
-    padding: 0 25px;
+    padding: 0 20px;
     font-size: 10px;
     font-weight: 600;
     letter-spacing: .1rem;
     text-decoration: none;
     text-transform: uppercase;
 }
+
 
 .m-b-md {
     margin-bottom: 30px;
@@ -88,3 +89,9 @@ html, body {
     
 
 }
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{   }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}	
