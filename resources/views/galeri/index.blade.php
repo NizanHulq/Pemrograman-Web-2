@@ -32,10 +32,10 @@
                                     <td>
                                         <form action="{{ route('galeri.destroy', $data->id) }}" method="post">
                                             @csrf
-                                            <button class="btn btn-danger" onclick="return confirm('Yakin mau dihapuss??')" style="padding : 0px 10px;"><i class="fa fa-times"></i> Hapus</button>
+                                            <button class="btn btn-danger" onclick="return confirm('Yakin mau dihapuss??')" style="padding : 0px 10px;"><i class="bi bi-trash"></i> Hapus</button>
                                         </form>
 
-                                        <a class="btn btn-primary" href="{{ route('galeri.edit',$data->id) }}" role="button" style="padding : 0px 20px;"> <i class="fa fa-pencil-alt"></i>Edit</a>
+                                        <a class="btn btn-primary" href="{{ route('galeri.edit',$data->id) }}" role="button" style="padding : 0px 20px;"><i class="bi bi-pencil-square"></i> Edit</a>
 
                                     </td>
                                 </tr>
