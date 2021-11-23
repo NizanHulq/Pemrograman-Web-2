@@ -39,7 +39,7 @@ class GaleriController extends Controller
         $galeri -> nama_galeri = $request->nama_galeri;
         $galeri -> keterangan = $request->keterangan;
         $galeri -> id_buku = $request->id_buku;
-        $galeri -> galeri_seo = Str::slug($request->judul);
+        $galeri -> galeri_seo = Str::slug($request->nama_galeri);
 
 
         $foto = $request->foto;
@@ -74,7 +74,7 @@ class GaleriController extends Controller
         $galeri -> nama_galeri = $request->nama_galeri;
         $galeri -> keterangan = $request->keterangan;
         $galeri -> id_buku = $request->id_buku;
-        $galeri -> galeri_seo = Str::slug($request->judul);
+        $galeri -> galeri_seo = Str::slug($request->nama_galeri);
 
 
         $foto = $request->foto;

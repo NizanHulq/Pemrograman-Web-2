@@ -39,6 +39,16 @@ Route::post('/buku/update/{id}',  'BukuController@update')->name('buku.update');
 
 Route::get('/buku/search',  'BukuController@search')->name('buku.search');
 
+Route::get('/list-buku',  'BukuController@list')->name('buku.list');
+Route::get('/detail-buku/{title}',  'BukuController@galbuku')->name('buku.detail');
+Route::post('/detail-buku/{title}',  'KomentarController@index')->name('buku.komentar');
+
+
+Route::get('/list-buku/{id}', 'BukuController@likefoto')->name('like.foto');
+
+
+
+
 Route::get('/user',  'UserController@index')->name('user');
 Route::get('/user/create',  'UserController@create')->name('user.create');
 Route::post('/user',  'UserController@store')->name('user.store');

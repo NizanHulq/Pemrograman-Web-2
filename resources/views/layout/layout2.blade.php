@@ -34,10 +34,10 @@
     </head>
     <body>
         @include('layout.navbar')
-        <div class="flex-center position-ref full-height">
+        <div class="position-ref full-height px-auto py-auto">
             
 
-            <div class="content" style="width:70vw">
+            <div class="content" >
                 
                 @yield('content')
                 
